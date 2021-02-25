@@ -3,7 +3,7 @@
 # variable definitions
 
 PRELOADS="$@"
-PRELOAD_PATHS=( "./preloads" ".." )
+PRELOAD_PATHS=( "./preloads" "./scripts" "./custom" )
 TMP_PATH="/tmp"
 PORTS_FILE="/tmp/preload-ports.txt"
 DEFAULT_PORT="9001"
@@ -27,3 +27,6 @@ else
 		USED_PORTS+=( "$port" )
 	done
 fi
+
+FALSE="$(which false)"
+HAS_SED=$(checkSed)
